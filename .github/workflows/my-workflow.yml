@@ -14,7 +14,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
       - name: build
-        run: gradle clean build 
+        run: gradle clean build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: report
+          path: build/report
         
   checkstyle:
     runs-on: ubuntu-latest
