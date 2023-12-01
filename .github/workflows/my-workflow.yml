@@ -19,7 +19,7 @@ jobs:
         
   checkstyle:
     runs-on: ubuntu-latest
-    name: checkstyle
+    name: Checkstyle job
     needs: build
     
     steps:       
