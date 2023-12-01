@@ -30,7 +30,8 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         reporter: 'github-pr-check'
-        tool_name: 'testtool'
+        tool_name: 'testtool'                   
+
         
   coverage:
     runs-on: ubuntu-latest
@@ -47,9 +48,9 @@ jobs:
     - name: Run jococo
       run: gradle jacocoTestReport
 
-    - name: Add coverage to PR
-      id: jacoco
-      uses: madrapps/jacoco-report@v1.6.1
+    - name: JaCoCo Report
+      uses: Madrapps/jacoco-report@v1.6.1
+            
       with:
         paths: |
             coverageFile: 'build/reports/jacoco/test/jacocoTestReport.xml'
